@@ -33,6 +33,12 @@ function App() {
     setActivities([...activities, newActivity])
   }
 
+  const toggleFinished = (id) => {
+    setActivities(activities.map((activity) => activity.id === id
+      ? { ...activity, finished: !activity.finished }
+      : activity))
+  }
+
   return (
     <div className='container'>
       <Header 
@@ -41,7 +47,7 @@ function App() {
       <>
         {showAddActivity && <AddActivity onAdd={addActivity} />}
         {activities.length > 0 
-          ? <Activities activities={activities} />
+          ? <Activities activities={activities} onToggle={toggleFinished} />
           : ('No Activities')}
       </>
     </div>

@@ -46,6 +46,12 @@ body {
   justify-content: space-between;
 }
 
+.activity.finished {
+  border-left: 5px solid red;
+  text-decoration: line-through;
+  color: darkgray;
+}
+
 .btn {
   display: inline-block;
   background: #000;
