@@ -27,3 +27,17 @@ body {
   text-align: center;
   margin-bottom: 20px;
 }
+
+.activity {
+  background: #f8f8f8;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.activity h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Activities from "./components/Activities";
 import Header from "./components/Header";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   return (
     <div className='container'>
       <Header />
+      <Activities activities={activities} />
     </div>
   )
 }
