@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Activities from "./components/Activities";
+import AddActivity from "./components/AddActivity";
 import Header from "./components/Header";
 
 function App() {
+  const [showAddActivity, setShowAddActivity] = useState(false)
   const [activities, setActivities] = useState([
     {
       id: 1,
@@ -24,10 +26,24 @@ function App() {
     },
   ])
 
+  const addActivity = (activity) => {
+    const id = Math.floor(Math.random() * 10000) + 1
+    // ...task is remainder of task
+    const newActivity = { id, ...activity }
+    setActivities([...activities, newActivity])
+  }
+
   return (
     <div className='container'>
-      <Header />
-      <Activities activities={activities} />
+      <Header 
+        onAdd={() => setShowAddActivity(!showAddActivity)} 
+        showAdd={showAddActivity} />
+      <>
+        {showAddActivity && <AddActivity onAdd={addActivity} />}
+        {activities.length > 0 
+          ? <Activities activities={activities} />
+          : ('No Activities')}
+      </>
     </div>
   )
 }
