@@ -39,6 +39,10 @@ function App() {
       : activity))
   }
 
+  const deleteActivity = (id) => {
+    setActivities(activities.filter((a) => a.id !== id))
+  }
+
   return (
     <div className='container'>
       <Header 
@@ -47,7 +51,7 @@ function App() {
       <>
         {showAddActivity && <AddActivity onAdd={addActivity} />}
         {activities.length > 0 
-          ? <Activities activities={activities} onToggle={toggleFinished} />
+          ? <Activities activities={activities} onDelete={deleteActivity} onToggle={toggleFinished} />
           : ('No Activities')}
       </>
     </div>
