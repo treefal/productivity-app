@@ -122,3 +122,14 @@ footer {
   margin-top: 30px;
   text-align: center;
 }
+
+ul {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+}
+
+ul li {
+  list-style: none;
+  margin-left: 1rem;
+}
